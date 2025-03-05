@@ -7,8 +7,8 @@ export default defineConfig({
     server: {
       https: {
         // Add your own ssl certificates if you want to test it
-        key: fs.readFileSync("./ssl-certificates/key.pem"),
-        cert: fs.readFileSync("./ssl-certificates/certificate.pem"),
+        key: fs.readFileSync("./ssl-certs2/example.com.key"),
+        cert: fs.readFileSync("./ssl-certs2/example.com.crt"),
       },
     },
   },
