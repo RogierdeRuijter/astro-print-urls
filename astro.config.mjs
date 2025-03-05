@@ -1,5 +1,15 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
+import fs from "node:fs";
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  vite: {
+    server: {
+      https: {
+        // Add your own ssl certificates if you want to test it
+        key: fs.readFileSync("./ssl-certificates/key.pem"),
+        cert: fs.readFileSync("./ssl-certificates/certificate.pem"),
+      },
+    },
+  },
+});
